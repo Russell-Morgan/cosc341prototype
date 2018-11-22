@@ -1,8 +1,9 @@
 package com.example.buyFood;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class buyListings {
+public class buyListings  implements Serializable {
 
     public static ArrayList<item> arrayList = new ArrayList<>();
 
@@ -16,7 +17,7 @@ public class buyListings {
     }
 
 
-    public static class item {
+    public static class item  implements Serializable{
 
         private String name;
 

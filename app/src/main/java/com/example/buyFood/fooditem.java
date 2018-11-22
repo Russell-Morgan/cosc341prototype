@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -15,21 +14,22 @@ import com.example.R;
 
 public class fooditem extends AppCompatActivity {
 
-    cart cart, thisCart;
+    cart thisCart;
     buyListings bL = new buyListings();
 
-    Button b, buy;
-    ImageButton ib;
+    Button buy;
     Spinner quan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        cart = new cart();
-        thisCart = new cart();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fooditem);
 
         final Intent intent = getIntent();
+
+        Bundle bundle = intent.getBundleExtra("b");
+        thisCart = (cart) bundle.getSerializable("thisCart");
 
         TextView tVname = findViewById(R.id.tVName);
         TextView tVdesc = findViewById(R.id.tVDescription);
@@ -37,7 +37,7 @@ public class fooditem extends AppCompatActivity {
 
         Log.d("Pass", "tv got");
 
-        final int id = intent.getIntExtra("id",0);
+        final int id = bundle.getInt("id",0);
 
 
         Log.d("Pass", "intent get");
@@ -66,15 +66,23 @@ public class fooditem extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         quan.setAdapter(adapter);
 
-        final Integer quantity = Integer.parseInt(quan.getSelectedItem().toString());
-
         final Intent toCheckout = new Intent(this, checkout.class);
+
         buy = (Button) findViewById(R.id.b_buy);
         buy.setOnClickListener(new View.OnClickListener() {
                                    @Override
                                    public void onClick(View view) {
-                                        thisCart.add(it,quantity);
-                                        toCheckout.putExtra("thisCart", thisCart);
+
+                                       Integer quantity = Integer.parseInt(quan.getSelectedItem().toString());
+
+                                       thisCart.add(it,quantity);
+
+                                        Log.d("Pass", "quant: " + quantity);
+
+                                        Bundle b = new Bundle();
+                                        b.putSerializable("thisCart", thisCart);
+                                        toCheckout.putExtra("b",b);
+
                                        startActivity(toCheckout);
                                    }
                                });

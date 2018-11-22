@@ -13,9 +13,11 @@ import android.widget.TextView;
 import com.example.R;
 
 public class checkout extends AppCompatActivity {
-
+    cart thisCart;
+    Bundle b;
     Button b1, b2 , b3;
     Intent intent1, intent2, intent3;
+    String address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +25,22 @@ public class checkout extends AppCompatActivity {
         setContentView(com.example.R.layout.activity_checkout);
 
         Intent intent = getIntent();
+        if(intent.hasExtra("b")){
+        b = intent.getBundleExtra("b");
 
-        cart thisCart = (cart
-                ) intent.getSerializableExtra("thisCart");
-
+        thisCart = (cart) b.getSerializable("thisCart");
         Log.d("Pass","nice");
+        }
+        else{
+            b = intent.getBundleExtra("Bundel");
+            thisCart = (cart) b.getSerializable("thisCart");
+            address = b.getString("newAdd");
+
+            TextView tVAddress = findViewById(R.id.tVAddress);
+            tVAddress.setText(address);
+        }
+
+
 
         intent1 = new Intent(this, fooditem.class);
         b1 = (Button) findViewById(R.id.b_gobacktofooditem);
@@ -43,6 +56,9 @@ public class checkout extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle b = new Bundle();
+                b.putSerializable("thisCart", thisCart);
+                intent2.putExtra("b",b);
                 startActivity(intent2);
             }
         });
@@ -66,7 +82,9 @@ public class checkout extends AppCompatActivity {
 
             tVName.setText(thisCart.cartL.get(i).getName());
             tVPrice.setText(thisCart.cartL.get(i).getPrice().toString());
-            tVQuantity.setText(thisCart.cartL.get(i).getQuantity());
+            tVQuantity.setText(thisCart.cartL.get(i).getQuantity().toString());
+
+            Log.d("Pass", "quant: " + thisCart.cartL.get(i).getQuantity());
             tVSubtotal.setText(thisCart.cartL.get(i).getSubtotal().toString());
 
             TableRow newTblRow = new TableRow(this);
@@ -80,5 +98,8 @@ public class checkout extends AppCompatActivity {
             orderTable.addView(newTblRow, ind);
             ind++;
         }
+
+        TextView tVTotal = findViewById(R.id.tVTotal);
+        tVTotal.setText(thisCart.countTotal().toString());
     }
 }

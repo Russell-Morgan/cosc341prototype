@@ -5,7 +5,6 @@ import com.example.buyFood.buyListings.item;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-@SuppressWarnings("serial")
 public class cart implements Serializable{
 
     ArrayList<item> cartL ;

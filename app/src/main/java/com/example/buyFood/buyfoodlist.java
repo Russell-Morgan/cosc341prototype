@@ -14,7 +14,7 @@ public class buyfoodlist extends AppCompatActivity {
 
 
     Intent intent1;
-    public cart cart;
+    public cart thisCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class buyfoodlist extends AppCompatActivity {
         setContentView(R.layout.activity_buyfoodlist);
 
         Log.d("Pass", "ok");
-        cart = new cart();
+        thisCart = new cart();
 
         Log.d("Pass", "ok");
 
@@ -51,7 +51,10 @@ public class buyfoodlist extends AppCompatActivity {
         food1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent1.putExtra("id", 0);
+                Bundle b = new Bundle();
+                b.putInt("id",0);
+                b.putSerializable("thisCart", thisCart);
+                intent1.putExtra("b",b);
                 startActivity(intent1);
             }
         });
@@ -61,7 +64,10 @@ public class buyfoodlist extends AppCompatActivity {
         food2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent1.putExtra("id", 1);
+                Bundle b = new Bundle();
+                b.putInt("id",1);
+                b.putSerializable("thisCart", thisCart);
+                intent1.putExtra("b",b);
                 startActivity(intent1);
             }
         });
