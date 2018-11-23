@@ -9,11 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".buyFood.buyfoodlist"> <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+        <activity android:name=".buyFood.buyfoodlist"> </activity>
         <activity android:name=".buyFood.fooditem" />
         <activity android:name=".buyFood.checkout" />
         <activity android:name=".buyFood.comfirmation" />
@@ -22,9 +18,17 @@
         <activity android:name=".sellFood.Selling"/>
         <activity android:name=".sellFood.Confirm"  android:parentActivityName=".sellFood.Selling"></activity>
 
-        <activity android:name=".sellFood.Listings">
+        <activity android:name=".sellFood.Listings"></activity>
+        <activity android:name=".Tracking2"></activity>
+        <activity android:name=".deliverFood.Delivery_main">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-        </activity>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
+        <activity android:name=".deliverFood.Deliveryinfo1"></activity>
+        <activity android:name=".deliverFood.DeliveryInfo2"></activity>
+        <activity android:name=".deliverFood.DeliveryInfo3"></activity>
         <activity android:name=".sellFood.Listing" android:parentActivityName=".sellFood.Listings"></activity>
     </application>
 
