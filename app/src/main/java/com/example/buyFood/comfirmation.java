@@ -23,6 +23,7 @@ public class comfirmation extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 startActivity(intent1);
             }
         });

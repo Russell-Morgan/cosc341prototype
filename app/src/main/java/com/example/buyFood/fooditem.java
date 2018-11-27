@@ -31,6 +31,14 @@ public class fooditem extends AppCompatActivity {
         Bundle bundle = intent.getBundleExtra("b");
         thisCart = (cart) bundle.getSerializable("thisCart");
 
+        Button backButton = findViewById(R.id.b_gobacktobuy);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         TextView tVname = findViewById(R.id.tVName);
         TextView tVdesc = findViewById(R.id.tVDescription);
         TextView tVVeg = findViewById(R.id.tVChoices);
