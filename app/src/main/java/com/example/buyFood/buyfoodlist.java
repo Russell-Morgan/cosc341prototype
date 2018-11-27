@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.R;
@@ -28,6 +29,15 @@ public class buyfoodlist extends AppCompatActivity {
 
         TextView food1 = findViewById(R.id.textViewChicken);
         TextView food2 = findViewById(R.id.textViewAsparagus);
+
+        Button backbut = findViewById(R.id.backbuy);
+        backbut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent backerbuy = new Intent(buyfoodlist.this, com.example.main.class);
+                startActivity(backerbuy);
+            }
+                });
 
         food1.setBackgroundColor(Color.parseColor("#d9d9d9"));
         food2.setBackgroundColor(Color.parseColor("#d9d9d9"));

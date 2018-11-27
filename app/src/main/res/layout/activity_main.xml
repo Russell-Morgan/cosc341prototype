@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main">
+
+    <Button
+        android:id="@+id/buyfood"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="173dp"
+        android:text="Buy Food"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/sellfood"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Sell Food"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buyfood" />
+
+    <Button
+        android:id="@+id/deliverfood"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Deliver Food"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sellfood" />
+
+    <Button
+        android:id="@+id/profile"
+        android:layout_width="371dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="5dp"
+        android:text="Profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/history" />
+
+    <Button
+        android:id="@+id/history"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="History"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deliverfood" />
+</android.support.constraint.ConstraintLayout>
