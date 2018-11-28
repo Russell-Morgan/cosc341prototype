@@ -28,14 +28,6 @@ public class checkout extends AppCompatActivity {
         if(intent.hasExtra("b")){
         b = intent.getBundleExtra("b");
 
-            Button backButton = findViewById(R.id.b_gobacktobuy);
-            backButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
-
         thisCart = (cart) b.getSerializable("thisCart");
         Log.d("Pass","nice");
         }
@@ -47,6 +39,14 @@ public class checkout extends AppCompatActivity {
             TextView tVAddress = findViewById(R.id.tVAddress);
             tVAddress.setText(address);
         }
+
+        Button backButton = findViewById(R.id.b_gobacktobuy);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
         intent2 = new Intent(this, newaddress.class);

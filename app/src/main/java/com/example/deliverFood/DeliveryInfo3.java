@@ -24,5 +24,13 @@ public class DeliveryInfo3 extends AppCompatActivity {
                 startActivity(intentTrack);
             }
         });
+
+        Button back3 = findViewById(R.id.backbutton3);
+        back3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
