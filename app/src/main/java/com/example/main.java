@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.yhy92.cosc341proj.Profile;
+
 public class main extends AppCompatActivity {
 
     @Override
@@ -54,7 +56,7 @@ public class main extends AppCompatActivity {
         Button profile = (Button) findViewById(R.id.profile);
         profile.setOnClickListener(new View.OnClickListener(){
             public void onClick(View V){
-
+                startActivity(new Intent(main.this, Profile.class));
             }
         });
 
