@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,8 +26,19 @@ public class newaddress extends AppCompatActivity {
         Intent prevIntent = getIntent();
         Bundle dud = prevIntent.getBundleExtra("b");
         thisCart = (cart) dud.getSerializable("thisCart");
+        Log.d("Pass","intent got");
 
         newAdd = "";
+
+        Button backButton = findViewById(R.id.b_backToScreen);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        Log.d("Pass","nice");
 
         intent1 = new Intent(this, checkout.class);
         b = (Button) findViewById(R.id.b_sendtothisaddress);
@@ -35,7 +47,7 @@ public class newaddress extends AppCompatActivity {
             public void onClick(View view) {
 
                 ConstraintLayout CL = findViewById(R.id.constLay);
-                for (int i = 0; i < CL.getChildCount() - 1; i++) {
+                for (int i = 0; i < CL.getChildCount() - 2; i++) {
                     TextView tv = (TextView) CL.getChildAt(i);
                     if(i==CL.getChildCount()-2)
                     newAdd  += tv.getText().toString();
