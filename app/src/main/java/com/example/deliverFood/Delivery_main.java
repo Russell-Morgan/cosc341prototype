@@ -41,5 +41,12 @@ public class Delivery_main extends AppCompatActivity {
                 startActivity(ord3);
             }
         });
+        Button back4 = findViewById(R.id.backbutton4);
+        back4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }

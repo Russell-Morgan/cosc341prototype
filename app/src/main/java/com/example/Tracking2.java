@@ -22,6 +22,7 @@ public class Tracking2 extends AppCompatActivity {
 
         LinearLayout LL = findViewById(R.id.layoutL);
         TextView nameFood = findViewById(R.id.textViewName);
+
         final Intent finishIntent = new Intent(this, main.class);
 
         Intent intent = getIntent();
