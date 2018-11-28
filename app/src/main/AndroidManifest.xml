@@ -37,7 +37,7 @@
         <activity
             android:name=".sellFood.Listing"
             android:parentActivityName=".sellFood.Listings" />
-        <activity android:name=".yhy92.cosc341proj.Profile"></activity>
+        <activity android:name=".Profile"></activity>
     </application>
 
 </manifest>

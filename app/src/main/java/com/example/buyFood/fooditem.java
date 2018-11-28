@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -47,6 +48,14 @@ public class fooditem extends AppCompatActivity {
 
         final int id = bundle.getInt("id",0);
 
+        final Intent intentProfile = new Intent(this, com.example.Profile.class);
+        final ImageButton profileButton = findViewById(R.id.profileButton);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intentProfile);
+            }
+        });
 
         Log.d("Pass", "intent get");
         final buyListings.item it = bL.getById(id);
