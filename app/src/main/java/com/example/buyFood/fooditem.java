@@ -7,10 +7,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.R;
+import com.example.yhy92.cosc341proj.Profile;
 
 public class fooditem extends AppCompatActivity {
 
@@ -22,6 +24,15 @@ public class fooditem extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        /*
+        ImageButton pbutton = (ImageButton) findViewById(R.id.imageButton12);
+        pbutton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View V){
+                startActivity(new Intent(fooditem.this, Profile.class));
+            }
+        });
+        */
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fooditem);

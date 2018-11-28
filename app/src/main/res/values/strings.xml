@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">COSC341Proj</string>
+    <string name="defaultname">Patrick Bateman</string>
+    <string name="defaultrating">2.5 / 5</string>
+    <string name="ratingText">Rating:</string>
+    <string name="profileListings">Previous Listings</string>
 
     <string-array name="units">
         <item>grams</item>
@@ -20,5 +24,11 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
+    </string-array>
+
+    <string-array name="defaultprofile">
+        <item>Patrick</item>
+        <item>Bateman</item>
+        <item>Rating: 1.5</item>
     </string-array>
 </resources>
