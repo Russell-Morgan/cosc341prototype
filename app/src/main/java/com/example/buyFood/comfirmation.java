@@ -18,19 +18,12 @@ public class comfirmation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comfirmation);
 
-        Button backButton = findViewById(R.id.b_backToScreen);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
         intent1 = new Intent(this, comfirmation_cond.class);
         b1 = (Button) findViewById(R.id.b_placeorder);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 startActivity(intent1);
             }
         });

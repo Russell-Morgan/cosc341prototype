@@ -3,8 +3,6 @@ package com.example.sellFood;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.R;
@@ -17,15 +15,6 @@ public class Listing extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listing);
-
-        Button backButton = findViewById(R.id.b_backToScreen);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
 
         Intent in = getIntent();
 
@@ -45,7 +34,6 @@ public class Listing extends AppCompatActivity {
         tVdiet.setText(listing.getChoices());
         tVsize.setText(listing.getSize().toString() + " " + listing.getUnit());
         tVquant.setText(listing.getQuantity().toString());
-        tVprice.setText(listing.getPrice().toString());
 
     }
 }
