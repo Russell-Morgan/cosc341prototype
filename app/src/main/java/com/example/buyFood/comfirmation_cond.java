@@ -17,6 +17,16 @@ public class comfirmation_cond extends AppCompatActivity {
         Button b1 = findViewById(R.id.button10);
 
         final Intent intent1 = new Intent(this, com.example.Tracking2.class);
+        final Intent intentMain = new Intent(this, com.example.main.class);
+
+
+        Button back2Screen = findViewById(R.id.b_backToScreen);
+        back2Screen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intentMain);
+            }
+        });
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
